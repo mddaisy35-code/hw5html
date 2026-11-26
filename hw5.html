@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>To Do List</title>
+</head>
+<body>
+
+    <h2>To-Do List</h2>
+
+    <input type="text" id="taskInput" placeholder="Enter task"><br><br>
+
+    <button id="addBtn"> Task btn</button></button>
+
+    <ul id="taskList"></ul>
+
+    <script>
+
+        let input = document.getElementById("taskInput");
+        let button = document.getElementById("addBtn");
+        let list = document.getElementById("taskList");
+
+        function addTask() {
+
+            let task = input.value;
+
+            let li = document.createElement("list");
+
+            li.textContent = task;
+
+            list.appendChild(li);
+
+            input.value = "";
+
+        }
+
+        button.addEventListener("click", addTask);
+
+        input.addEventListener("keydown", function(e) {
+
+            if (e.key == "Enter")
+            
+        {
+              
+          addTask();
+        }
+        });
+
+    </script>
+
+</body>
+</html>
